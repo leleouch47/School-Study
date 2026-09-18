@@ -1,0 +1,89 @@
+# ============================================================
+# School Study - .gitignore
+# 用法：这个文件告诉 git「哪些文件不要提交」
+# 规则：一行一条；# 开头是注释（必须独占一行，不支持行尾注释）
+# 注意：已经提交过的文件不会因为写在这而消失，要先 git rm --cached
+# ============================================================
+
+# ---------- Keil uVision / MDK 编译产物 ----------
+# 这些是按下 F7 编译后自动生成的，每台机器都会重新生成一次，
+# 提交上去没有价值，还会让 diff 变得乱七八糟
+
+# 用户界面状态（含窗口布局和用户名）
+*.uvoptx
+*.uvopt
+*.uvguix.*
+
+# 编译中间文件
+Objects/
+Listings/
+DebugConfig/
+RTE/_*/
+*.o
+*.d
+*.crf
+*.dep
+*.lnp
+*.iex
+*.scvd
+*.bak
+*.uvgui
+
+# 链接与构建报告
+*.map
+*.lst
+*.htm
+*.build_log.htm
+
+# 烧录用的二进制产物（克隆后请自己重新编译）
+*.hex
+*.bin
+*.elf
+*.axf
+
+# 调试器
+JLinkLog.txt
+JLinkSettings.ini
+
+# 重要：*.uvprojx 和 *.uvproj 是工程文件本身，必须提交，不要加到这里
+
+# ---------- C / C++ ----------
+*.obj
+*.exe
+*.out
+*.a
+*.so
+*.dll
+
+# ---------- Python ----------
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# .env 里常有密钥，绝对不能提交
+.env
+*.egg-info/
+.pytest_cache/
+
+# ---------- 编辑器 / IDE ----------
+.vscode/
+.idea/
+*.swp
+*~
+
+# ---------- Windows / macOS 系统文件 ----------
+Thumbs.db
+Desktop.ini
+desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+
+# ---------- Office 临时文件 ----------
+~$*.docx
+~$*.xlsx
+~$*.pptx
+
+# ---------- 本地资料库索引（只在本地用，不需要公开）----------
+00-资料库索引.html
